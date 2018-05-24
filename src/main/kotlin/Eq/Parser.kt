@@ -12,35 +12,37 @@ class Parser() {
     private var textChars : CharArray = charArrayOf()
     private var index: Int = 0
     private var curToken: Token = Token("", TokenType.Empty)
-    private var finishedParsing : Boolean = false
-    private var statement : Clause = EmptyClause()
 
     fun parse(text: String?): Clause {
-        return if(text.isNullOrEmpty()) {
+        return if(text == null || text.isNullOrEmpty()) {
             EmptyClause()
         }
         else {
-            textChars = text!!.toCharArray()
-            index = 0
-            finishedParsing = false
-            statement = parseStatement()
-            curToken = Token("", TokenType.Empty)
-            return statement
+            return parseStatement(text)
         }
     }
 
-    private fun parseStatement() : Clause {
-        var statement : Clause = EmptyClause()
+    private fun parseStatement(text: String) : Clause {
+        textChars = text.toCharArray()
+        index = 0
         getNextToken()
-        do {
-            statement = parseClause(statement)
-        } while (curToken.type != TokenType.Empty)
-        return statement
+        val startClause = EmptyClause()
+        val parsedClause = parseClause(startClause)
+
+        if(index < textChars.size - 1) {
+            throw IllegalArgumentException()
+        }
+
+        return parsedClause
     }
 
     private fun parseClause(curClause : Clause) : Clause {
         var lhs = subClause(curClause)
-        while(curToken.type == TokenType.Add || curToken.type == TokenType.Subtraction || curToken.type == TokenType.Multiply || curToken.type == TokenType.Division) {
+
+        while(curToken.type == TokenType.Add
+                || curToken.type == TokenType.Subtraction
+                || curToken.type == TokenType.Multiply
+                || curToken.type == TokenType.Division) {
             val newClause = curToken.createCorrespondingClause(lhs)
             getNextToken()
             lhs = parseClause(newClause)
@@ -66,6 +68,8 @@ class Parser() {
             val middleClause = parseClause(EmptyClause())
             if(curToken.type == TokenType.RightBracket) {
                 getNextToken()
+            } else {
+                throw IllegalArgumentException()
             }
             clause = BracketClause(middleClause)
 

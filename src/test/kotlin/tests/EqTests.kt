@@ -14,45 +14,26 @@ class EqTests {
 
     fun createEq(): Eq = Eq(Parser())
 
+    fun testFailure(text: String?) {
+        val eq = createEq()
+        assertFailsWith(IllegalArgumentException::class, {
+          eq.eval(text)
+        })
+    }
+
     @Test
     fun `nonsense in nonsense out`() {
-        val eq = createEq()
-
-        assertFailsWith(IllegalArgumentException::class, {
-            eq.eval("nonsense")
-        })
-
-        assertFailsWith(IllegalArgumentException::class, {
-            eq.eval("")
-        })
-
-        assertFailsWith(IllegalArgumentException::class, {
-            eq.eval(null)
-        })
-
-        assertFailsWith(IllegalArgumentException::class, {
-            eq.eval("*")
-        })
-
-        assertFailsWith(IllegalArgumentException::class, {
-            eq.eval("+")
-        })
-
-        assertFailsWith(IllegalArgumentException::class, {
-            eq.eval("-")
-        })
-
-        assertFailsWith(IllegalArgumentException::class, {
-            eq.eval("/")
-        })
-
-        assertFailsWith(IllegalArgumentException::class, {
-            eq.eval("^")
-        })
-
-        assertFailsWith(IllegalArgumentException::class, {
-            eq.eval("1 +")
-        })
+        testFailure("nonsense")
+        testFailure("")
+        testFailure(null)
+        testFailure("*")
+        testFailure("+")
+        testFailure("-")
+        testFailure("/")
+        testFailure("^")
+        testFailure("1 +")
+        testFailure("(1 + 1")
+        testFailure("1 + 1 2 - 2")
     }
 
     fun testEq(text : String, expected : Int) {
