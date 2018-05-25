@@ -104,10 +104,7 @@ class EqTests {
     fun `combination`() {
         testEq("4 * 5 / 2 + 7", 17)
         testEq("((25 / 5 * 2) / 2) * 30 - 5 + 5", 150)
-    }
+        testEq("7 + (7 / 7) + (7 * 7) - 7", 50)
 
-    @Test
-    fun `BODMAS`() {
-        testEq("7 + 7 / 7 + 7 * 7 - 7", 50)
     }
 }

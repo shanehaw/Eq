@@ -1,6 +1,8 @@
 package Eq.Clauses
 
-class DivisionClause(val lhs : Clause): Clause() {
+class DivisionClause(var lhs : Clause): Clause() {
+
+
     var rhs : Clause = EmptyClause()
 
     override fun hasRHS(): Boolean = true
@@ -13,6 +15,8 @@ class DivisionClause(val lhs : Clause): Clause() {
         lhs.prepare(op)
         rhs.prepare(op)
         if(op == Operation.Division) {
+            lhs.prepareBODMAS()
+            rhs.prepareBODMAS()
             value = lhs.eval() / rhs.eval()
         }
     }

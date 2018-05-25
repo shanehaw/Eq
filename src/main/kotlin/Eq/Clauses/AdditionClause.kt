@@ -1,6 +1,7 @@
 package Eq.Clauses
 
-class AdditionClause(val lhs : Clause) : Clause() {
+class AdditionClause(var lhs : Clause) : Clause() {
+
     override fun print(): String {
         return lhs.print() + " + " + rhs.print()
     }
@@ -17,6 +18,8 @@ class AdditionClause(val lhs : Clause) : Clause() {
         lhs.prepare(op)
         rhs.prepare(op)
         if(op == Operation.Add) {
+            lhs.prepareBODMAS()
+            rhs.prepareBODMAS()
             value = lhs.eval() + rhs.eval()
         }
     }

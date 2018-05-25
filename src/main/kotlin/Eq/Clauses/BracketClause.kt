@@ -1,6 +1,8 @@
 package Eq.Clauses
 
 open class BracketClause(open val inner : Clause) : Clause() {
+
+
     override fun print(): String {
         return "(" + inner.print() + ")"
     }

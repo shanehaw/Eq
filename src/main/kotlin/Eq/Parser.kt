@@ -1,44 +1,39 @@
 package Eq
 
-import Eq.Clauses.Clause
-import Eq.Clauses.EmptyClause
-import Eq.Clauses.IntLiteralClause
-import Eq.Clauses.SubtractionClause
-import Eq.Clauses.LogicalHiddenBracketClause
-import Eq.Clauses.BracketClause
+import Eq.Clauses.*
 import java.lang.Character.isDigit
 
-class Parser() {
+class Parser {
 
-    private var textChars : CharArray = charArrayOf()
+    private var textChars: CharArray = charArrayOf()
     private var index: Int = 0
     private var curToken: Token = Token("", TokenType.Empty)
 
     fun parse(text: String?): Clause {
-        if(text == null || text.isEmpty()) {
+        if (text == null || text.isEmpty()) {
             throw IllegalArgumentException()
         }
 
         return parseStatement(text)
     }
 
-    private fun parseStatement(text: String) : Clause {
+    private fun parseStatement(text: String): Clause {
         textChars = text.toCharArray()
         index = 0
         getNextToken()
-        val parsedClause = parseClause(EmptyClause())
 
-        if(index < textChars.size - 1) {
+        var parsedClause = parseClause(EmptyClause())
+        if (index < textChars.size - 1) {
             throw IllegalArgumentException()
         }
 
         return parsedClause
     }
 
-    private fun parseClause(curClause : Clause) : Clause {
+    private fun parseClause(curClause: Clause): Clause {
         var lhs = subClause(curClause)
 
-        while(curToken.type == TokenType.Add
+        while (curToken.type == TokenType.Add
                 || curToken.type == TokenType.Subtraction
                 || curToken.type == TokenType.Multiply
                 || curToken.type == TokenType.Division) {
@@ -49,30 +44,31 @@ class Parser() {
         return lhs
     }
 
-    private fun subClause(curClause : Clause) : Clause {
-        if(curToken.type == TokenType.Integer) {
-            var clause : Clause = IntLiteralClause(curToken.token.toInt())
+    private fun subClause(curClause: Clause): Clause {
+        if (curToken.type == TokenType.Integer) {
+            var clause: Clause = IntLiteralClause(curToken.token.toInt())
 
-            if(curClause.hasRHS()) {
+            if (curClause.hasRHS()) {
                 curClause.setRHS(clause)
                 clause = LogicalHiddenBracketClause(curClause)
+//                clause = curClause
             }
 
             getNextToken()
             return clause
-        } else if(curToken.type == TokenType.LeftBracket){
-            var clause : Clause
+        } else if (curToken.type == TokenType.LeftBracket) {
+            var clause: Clause
 
             getNextToken()
             val middleClause = parseClause(EmptyClause())
-            if(curToken.type == TokenType.RightBracket) {
+            if (curToken.type == TokenType.RightBracket) {
                 getNextToken()
             } else {
                 throw IllegalArgumentException()
             }
             clause = BracketClause(middleClause)
 
-            if(curClause.hasRHS()) {
+            if (curClause.hasRHS()) {
                 curClause.setRHS(clause)
                 clause = curClause
             }
@@ -83,7 +79,7 @@ class Parser() {
 
     private fun getNextToken() {
         curToken = Token("", TokenType.Empty)
-        if(index < textChars.size) {
+        if (index < textChars.size) {
             val curChar = getFirstCharAfterWhitespace()
             when {
                 curChar == '(' -> {
@@ -115,7 +111,7 @@ class Parser() {
         }
     }
 
-    private fun getFirstCharAfterWhitespace() : Char {
+    private fun getFirstCharAfterWhitespace(): Char {
         var curChar = textChars[index]
         while (curChar == ' ') {
             index++
@@ -124,17 +120,17 @@ class Parser() {
         return curChar
     }
 
-    private fun getNextIntegerToken() : Token {
+    private fun getNextIntegerToken(): Token {
         var curChar = textChars.get(index)
         val tokenChars: MutableList<Char> = mutableListOf()
-        while(isDigit(curChar)) {
+        while (isDigit(curChar)) {
             tokenChars.add(tokenChars.size, curChar)
             index++
             curChar =
-                if (index < textChars.size)
-                    textChars[index]
-                else
-                    0.toChar()
+                    if (index < textChars.size)
+                        textChars[index]
+                    else
+                        0.toChar()
         }
         return Token(tokenChars.joinToString(""), TokenType.Integer)
     }

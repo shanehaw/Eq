@@ -1,6 +1,8 @@
 package Eq.Clauses
 
-class MultiplyClause(val lhs: Clause): Clause() {
+class MultiplyClause(var lhs: Clause): Clause() {
+
+
     var rhs: Clause = EmptyClause()
 
     override fun hasRHS(): Boolean  = true
@@ -13,6 +15,8 @@ class MultiplyClause(val lhs: Clause): Clause() {
         lhs.prepare(op)
         rhs.prepare(op)
         if(op == Operation.Multiply) {
+            lhs.prepareBODMAS()
+            rhs.prepareBODMAS()
             value = lhs.eval() * rhs.eval()
         }
     }

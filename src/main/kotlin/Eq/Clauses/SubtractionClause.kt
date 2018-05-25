@@ -1,6 +1,8 @@
 package Eq.Clauses
 
-class SubtractionClause(val lhs: Clause) : Clause() {
+class SubtractionClause(var lhs: Clause) : Clause() {
+
+
     override fun print(): String {
         return lhs.print() + " - " + rhs.print()
     }
@@ -17,6 +19,8 @@ class SubtractionClause(val lhs: Clause) : Clause() {
         lhs.prepare(op)
         rhs.prepare(op)
         if(op == Operation.Sub) {
+            lhs.prepareBODMAS()
+            rhs.prepareBODMAS()
             value = lhs.eval() - rhs.eval()
         }
     }
