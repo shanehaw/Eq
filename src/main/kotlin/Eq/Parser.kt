@@ -3,6 +3,7 @@ package Eq
 import Eq.Clauses.Clause
 import Eq.Clauses.EmptyClause
 import Eq.Clauses.IntLiteralClause
+import Eq.Clauses.SubtractionClause
 import Eq.Clauses.LogicalHiddenBracketClause
 import Eq.Clauses.BracketClause
 import java.lang.Character.isDigit

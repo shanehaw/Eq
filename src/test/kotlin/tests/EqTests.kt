@@ -98,13 +98,16 @@ class EqTests {
     fun `division`() {
         testEq("1 / 1", 1)
         testEq("8 / 2 / 2", 2)
-
     }
 
     @Test
     fun `combination`() {
         testEq("4 * 5 / 2 + 7", 17)
         testEq("((25 / 5 * 2) / 2) * 30 - 5 + 5", 150)
+    }
 
+    @Test
+    fun `BODMAS`() {
+        testEq("7 + 7 / 7 + 7 * 7 - 7", 50)
     }
 }
