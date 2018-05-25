@@ -51,7 +51,6 @@ class Parser {
             if (curClause.hasRHS()) {
                 curClause.setRHS(clause)
                 clause = LogicalHiddenBracketClause(curClause)
-//                clause = curClause
             }
 
             getNextToken()
