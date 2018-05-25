@@ -14,20 +14,18 @@ class Parser() {
     private var curToken: Token = Token("", TokenType.Empty)
 
     fun parse(text: String?): Clause {
-        return if(text == null || text.isNullOrEmpty()) {
-            EmptyClause()
+        if(text == null || text.isEmpty()) {
+            throw IllegalArgumentException()
         }
-        else {
-            return parseStatement(text)
-        }
+
+        return parseStatement(text)
     }
 
     private fun parseStatement(text: String) : Clause {
         textChars = text.toCharArray()
         index = 0
         getNextToken()
-        val startClause = EmptyClause()
-        val parsedClause = parseClause(startClause)
+        val parsedClause = parseClause(EmptyClause())
 
         if(index < textChars.size - 1) {
             throw IllegalArgumentException()
@@ -84,47 +82,59 @@ class Parser() {
 
     private fun getNextToken() {
         curToken = Token("", TokenType.Empty)
-
         if(index < textChars.size) {
-
-            var tokenChars: MutableList<Char> = mutableListOf()
-            var curChar = textChars[index]
-            while (curChar == ' ') {
-                index++;
-                curChar = textChars.get(index)
-            }
-
-            if (curChar == '(') {
-                curToken = Token("(", TokenType.LeftBracket)
-                index++
-            } else if (curChar == ')') {
-                curToken = Token(")", TokenType.RightBracket)
-                index++
-            } else if (curChar == '+') {
-                curToken = Token("+", TokenType.Add)
-                index++
-            } else if (curChar == '-') {
-                curToken = Token("-", TokenType.Subtraction)
-                index++
-            } else if (curChar == '*') {
-                curToken = Token("*", TokenType.Multiply)
-                index++
-            } else if (curChar == '/') {
-                curToken = Token("/", TokenType.Division)
-                index++
-            } else {
-
-                if (isDigit(curChar)) {
-                    do {
-                        tokenChars.add(tokenChars.size, curChar)
-                        index++
-                        curChar = if (index < textChars.size) textChars.get(index) else 0.toChar()
-
-                    } while (isDigit(curChar))
-
-                    curToken = Token(tokenChars.joinToString(""), TokenType.Integer)
+            val curChar = getFirstCharAfterWhitespace()
+            when {
+                curChar == '(' -> {
+                    curToken = Token("(", TokenType.LeftBracket)
+                    index++
                 }
+                curChar == ')' -> {
+                    curToken = Token(")", TokenType.RightBracket)
+                    index++
+                }
+                curChar == '+' -> {
+                    curToken = Token("+", TokenType.Add)
+                    index++
+                }
+                curChar == '-' -> {
+                    curToken = Token("-", TokenType.Subtraction)
+                    index++
+                }
+                curChar == '*' -> {
+                    curToken = Token("*", TokenType.Multiply)
+                    index++
+                }
+                curChar == '/' -> {
+                    curToken = Token("/", TokenType.Division)
+                    index++
+                }
+                isDigit(curChar) -> curToken = getNextIntegerToken()
             }
         }
+    }
+
+    private fun getFirstCharAfterWhitespace() : Char {
+        var curChar = textChars[index]
+        while (curChar == ' ') {
+            index++
+            curChar = textChars[index]
+        }
+        return curChar
+    }
+
+    private fun getNextIntegerToken() : Token {
+        var curChar = textChars.get(index)
+        val tokenChars: MutableList<Char> = mutableListOf()
+        while(isDigit(curChar)) {
+            tokenChars.add(tokenChars.size, curChar)
+            index++
+            curChar =
+                if (index < textChars.size)
+                    textChars[index]
+                else
+                    0.toChar()
+        }
+        return Token(tokenChars.joinToString(""), TokenType.Integer)
     }
 }

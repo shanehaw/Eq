@@ -6,13 +6,21 @@ abstract class Clause() {
 
     abstract fun prepare(op: Operation)
 
-    abstract fun hasRHS() : Boolean
+    open fun hasRHS() : Boolean = false
 
-    abstract fun setRHS(clause: Clause);
+    open fun setRHS(clause: Clause) { }
 
-    abstract fun print() : String;
+    abstract fun print() : String
 
     fun eval() : Int {
         return value!!
+    }
+
+    fun prepareBODMAS() {
+        prepare(Operation.Bracket)
+        prepare(Operation.Division)
+        prepare(Operation.Multiply)
+        prepare(Operation.Add)
+        prepare(Operation.Sub)
     }
 }

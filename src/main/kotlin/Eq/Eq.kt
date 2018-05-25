@@ -9,17 +9,9 @@ class Eq(val parser: Parser) {
         if (statement is EmptyClause)
             throw IllegalArgumentException()
         else {
-            prepareBODMAS(statement)
+            statement.prepareBODMAS()
             return statement.eval()
         }
-    }
-
-    private fun prepareBODMAS(statement: Clause) {
-        statement.prepare(Operation.Bracket)
-        statement.prepare(Operation.Division)
-        statement.prepare(Operation.Multiply)
-        statement.prepare(Operation.Add)
-        statement.prepare(Operation.Sub)
     }
 
     fun evalAndPrintBack(text: String?): String {

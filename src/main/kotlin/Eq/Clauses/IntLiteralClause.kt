@@ -5,11 +5,6 @@ class IntLiteralClause(val num: Int) : Clause() {
         return num.toString()
     }
 
-    override fun setRHS(clause: Clause) {
-    }
-
-    override fun hasRHS(): Boolean = false
-
     override fun prepare(op: Operation) {
         value = num
     }

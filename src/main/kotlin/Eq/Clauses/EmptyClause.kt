@@ -5,11 +5,6 @@ class EmptyClause() : Clause() {
         return "!empty!"
     }
 
-    override fun setRHS(clause: Clause) {
-    }
-
-    override fun hasRHS(): Boolean = false
-
     override fun prepare(op: Operation) {
     }
 
