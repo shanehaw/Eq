@@ -1,13 +1,12 @@
 package Eq
 
 import Eq.Clauses.*
-import java.lang.Character.isDigit
 
-class Parser {
+class Parser(val scanner: Scanner) {
 
-    private var textChars: CharArray = charArrayOf()
-    private var index: Int = 0
     private var curToken: Token = Token("", TokenType.Empty)
+    private var text: String = ""
+    private var index: Int = 0
 
     fun parse(text: String?): Clause {
         if (text == null || text.isEmpty()) {
@@ -18,12 +17,13 @@ class Parser {
     }
 
     private fun parseStatement(text: String): Clause {
-        textChars = text.toCharArray()
-        index = 0
+        this.text = text
+        this.index = 0
+
         getNextToken()
 
         var parsedClause = parseClause(EmptyClause())
-        if (index < textChars.size - 1) {
+        if (index < text.length - 1) {
             throw IllegalArgumentException()
         }
 
@@ -77,60 +77,9 @@ class Parser {
     }
 
     private fun getNextToken() {
-        curToken = Token("", TokenType.Empty)
-        if (index < textChars.size) {
-            val curChar = getFirstCharAfterWhitespace()
-            when {
-                curChar == '(' -> {
-                    curToken = Token("(", TokenType.LeftBracket)
-                    index++
-                }
-                curChar == ')' -> {
-                    curToken = Token(")", TokenType.RightBracket)
-                    index++
-                }
-                curChar == '+' -> {
-                    curToken = Token("+", TokenType.Add)
-                    index++
-                }
-                curChar == '-' -> {
-                    curToken = Token("-", TokenType.Subtraction)
-                    index++
-                }
-                curChar == '*' -> {
-                    curToken = Token("*", TokenType.Multiply)
-                    index++
-                }
-                curChar == '/' -> {
-                    curToken = Token("/", TokenType.Division)
-                    index++
-                }
-                isDigit(curChar) -> curToken = getNextIntegerToken()
-            }
-        }
-    }
+        val nextContext = scanner.getNextToken(text, index)
+        curToken = nextContext.curToken
+        index = nextContext.index
 
-    private fun getFirstCharAfterWhitespace(): Char {
-        var curChar = textChars[index]
-        while (curChar == ' ') {
-            index++
-            curChar = textChars[index]
-        }
-        return curChar
-    }
-
-    private fun getNextIntegerToken(): Token {
-        var curChar = textChars.get(index)
-        val tokenChars: MutableList<Char> = mutableListOf()
-        while (isDigit(curChar)) {
-            tokenChars.add(tokenChars.size, curChar)
-            index++
-            curChar =
-                    if (index < textChars.size)
-                        textChars[index]
-                    else
-                        0.toChar()
-        }
-        return Token(tokenChars.joinToString(""), TokenType.Integer)
     }
 }

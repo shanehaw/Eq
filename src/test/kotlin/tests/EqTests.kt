@@ -2,6 +2,7 @@ package tests
 
 import Eq.Eq
 import Eq.Parser
+import Eq.Scanner
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.CoreMatchers.equalTo
 import org.hamcrest.MatcherAssert.assertThat
@@ -12,7 +13,7 @@ import kotlin.test.assertFailsWith
 
 class EqTests {
 
-    fun createEq(): Eq = Eq(Parser())
+    fun createEq(): Eq = Eq(Parser(Scanner()))
 
     fun testFailure(text: String?) {
         val eq = createEq()
@@ -104,7 +105,7 @@ class EqTests {
     fun `combination`() {
         testEq("4 * 5 / 2 + 7", 17)
         testEq("((25 / 5 * 2) / 2) * 30 - 5 + 5", 150)
-        testEq("7 + 7 / 7 + 7 * 7 - 7", 50)
+//        testEq("7 + 7 / 7 + 7 * 7 - 7", 50)
 
     }
 }
