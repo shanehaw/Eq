@@ -44,7 +44,7 @@ class EnricherTests {
         result = enricher.enrich("1 + 1 / 1")
         assertThat(result, `is`("(1 + (1 / 1))"))
 
-//        result = enricher.enrich("1 + 1 / 1 - 1 / 1 + 1")
-//        assertThat(result, `is`("(1 + (1 / 1) - (1 / 1) + 1)"))
+        result = enricher.enrich("1 + 1 / 1 - 1 / 1 + 1")
+        assertThat(result, `is`("(1 + (1 / 1) - (1 / 1) + 1)"))
     }
 }

@@ -11,19 +11,22 @@ class Enricher(val scanner: Scanner) {
             text.toCollection(charCollection)
             chs.addAll(0, charCollection)
 
-            for(i in 0 until chs.size) {
+            var i = 0
+            while(i < chs.size) {
                 val curChar = chs[i]
                 if(curChar == '/') {
                     index = i - 1
                     getNextToken(false)
                     subClause(false)
-                    chs.add(index, '(')
-                    index = i
+                    chs.add(index + 1, '(')
+                    index = i + 2
                     getNextToken(true)
                     subClause(true)
                     chs.add(index, ')')
                     index = 0
+                    i++
                 }
+                i++
             }
 
             return "(${chs.joinToString("")})"
@@ -34,17 +37,18 @@ class Enricher(val scanner: Scanner) {
     private fun subClause(forwards: Boolean)  {
         if (curToken.type == TokenType.Integer) {
             getNextToken(forwards)
-        } else if (curToken.type == TokenType.LeftBracket) {
+        } else if ((forwards && curToken.type == TokenType.LeftBracket) || (!forwards && curToken.type == TokenType.RightBracket)) {
 
             getNextToken(forwards)
             parseClause(forwards)
-            if (curToken.type == TokenType.RightBracket) {
+            if ((forwards && curToken.type == TokenType.RightBracket) || (!forwards && curToken.type == TokenType.LeftBracket)) {
                 getNextToken(forwards)
             } else {
                 throw IllegalArgumentException()
             }
+        } else {        
+            throw IllegalArgumentException()
         }
-        throw IllegalArgumentException()
     }
 
     private fun getNextToken(forwards: Boolean) {
