@@ -3,10 +3,14 @@ package Eq
 
 import Eq.Clauses.*
 
-class Eq(val parser: Parser) {
+class Eq(val parser: Parser, val enricher: Enricher) {
     fun eval(text: String?): Int {
+        if (text == null || text.isEmpty()) {
+            throw IllegalArgumentException()
+        }
 
-        val statement = parser.parse(text)
+        val enrichedText = enricher.enrich(text)
+        val statement = parser.parse(enrichedText)
         if (statement is EmptyClause)
             throw IllegalArgumentException()
         else {
@@ -16,6 +20,10 @@ class Eq(val parser: Parser) {
     }
 
     fun evalAndPrintBack(text: String?): String {
+        if (text == null || text.isEmpty()) {
+            throw IllegalArgumentException()
+        }
+
         val statement = parser.parse(text)
         if (statement is EmptyClause)
             throw IllegalArgumentException()

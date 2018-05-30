@@ -26,27 +26,27 @@ class Scanner {
             when {
                 curChar == '(' -> {
                     curToken = Token("(", TokenType.LeftBracket)
-                    index++
+                    index = if(forwards) index + 1 else index -1
                 }
                 curChar == ')' -> {
                     curToken = Token(")", TokenType.RightBracket)
-                    index++
+                    index = if(forwards) index + 1 else index -1
                 }
                 curChar == '+' -> {
                     curToken = Token("+", TokenType.Add)
-                    index++
+                    index = if(forwards) index + 1 else index -1
                 }
                 curChar == '-' -> {
                     curToken = Token("-", TokenType.Subtraction)
-                    index++
+                    index = if(forwards) index + 1 else index -1
                 }
                 curChar == '*' -> {
                     curToken = Token("*", TokenType.Multiply)
-                    index++
+                    index = if(forwards) index + 1 else index -1
                 }
                 curChar == '/' -> {
                     curToken = Token("/", TokenType.Division)
-                    index++
+                    index = if(forwards) index + 1 else index -1
                 }
                 Character.isDigit(curChar) -> curToken = if(forwards) getNextIntegerToken() else getPrevIntegerToken()
             }

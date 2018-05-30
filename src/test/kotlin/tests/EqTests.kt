@@ -1,24 +1,28 @@
 package tests
 
+import Eq.Enricher
 import Eq.Eq
 import Eq.Parser
 import Eq.Scanner
 import org.hamcrest.CoreMatchers.`is`
-import org.hamcrest.CoreMatchers.equalTo
 import org.hamcrest.MatcherAssert.assertThat
-import org.junit.Ignore
 import org.junit.Test
 import java.lang.IllegalArgumentException
 import kotlin.test.assertFailsWith
 
 class EqTests {
 
-    fun createEq(): Eq = Eq(Parser(Scanner()))
+    fun createEq(): Eq =
+            Eq(
+                Parser(
+                    Scanner()),
+                Enricher(
+                    Scanner()))
 
     fun testFailure(text: String?) {
         val eq = createEq()
         assertFailsWith(IllegalArgumentException::class, {
-          eq.eval(text)
+            eq.eval(text)
         })
     }
 
@@ -37,14 +41,14 @@ class EqTests {
         testFailure("1 + 1 2 - 2")
     }
 
-    fun testEq(text : String, expected : Int) {
+    fun testEq(text: String, expected: Int) {
         val eq = createEq()
 
         val result = eq.eval(text)
         assertThat(result, `is`(expected))
 
-        val resultText = eq.evalAndPrintBack(text)
-        assertThat(resultText, `is`(text))
+//        val resultText = eq.evalAndPrintBack(text)
+//        assertThat(resultText, `is`(text))
     }
 
     @Test
@@ -76,7 +80,7 @@ class EqTests {
     }
 
     @Test
-    fun`brackets`() {
+    fun `brackets`() {
         testEq("(1 + 10) - 10", 1)
         testEq("100 + (1 + 10) - ((13 - 3) + 2)", 99)
         testEq("((100 - 50) - (40 + 25 - 30)) - (1 + 10) - ((13 - 3) + 2)", -8)
@@ -105,7 +109,6 @@ class EqTests {
     fun `combination`() {
         testEq("4 * 5 / 2 + 7", 17)
         testEq("((25 / 5 * 2) / 2) * 30 - 5 + 5", 150)
-//        testEq("7 + 7 / 7 + 7 * 7 - 7", 50)
-
+        testEq("7 + 7 / 7 + 7 * 7 - 7", 50)
     }
 }

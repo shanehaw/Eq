@@ -8,11 +8,7 @@ class Parser(val scanner: Scanner) {
     private var text: String = ""
     private var index: Int = 0
 
-    fun parse(text: String?): Clause {
-        if (text == null || text.isEmpty()) {
-            throw IllegalArgumentException()
-        }
-
+    fun parse(text: String): Clause {
         return parseStatement(text)
     }
 

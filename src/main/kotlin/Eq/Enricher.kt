@@ -7,6 +7,8 @@ class Enricher(val scanner: Scanner) {
 
     fun enrich(text: String) : String {
         if(text.isNotEmpty() && text.first().isDigit()) {
+            index = 0
+            chs.clear()
             val charCollection : MutableCollection<Char> = mutableListOf()
             text.toCollection(charCollection)
             chs.addAll(0, charCollection)
@@ -14,14 +16,16 @@ class Enricher(val scanner: Scanner) {
             var i = 0
             while(i < chs.size) {
                 val curChar = chs[i]
-                if(curChar == '/') {
+                if(curChar == '/' || curChar == '*') {
                     index = i - 1
                     getNextToken(false)
                     subClause(false)
-                    chs.add(index + 1, '(')
+                    getNextToken(true)
+                    chs.add(index+1, '(')
                     index = i + 2
                     getNextToken(true)
                     subClause(true)
+                    getNextToken(false)
                     chs.add(index, ')')
                     index = 0
                     i++
