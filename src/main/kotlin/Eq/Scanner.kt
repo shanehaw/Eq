@@ -32,14 +32,6 @@ class Scanner {
                     curToken = Token(")", TokenType.RightBracket)
                     index = if(forwards) index + 1 else index -1
                 }
-                curChar == '[' -> {
-                    curToken = Token("[", TokenType.LeftSquareBracket)
-                    index = if(forwards) index + 1 else index -1
-                }
-                curChar == ']' -> {
-                    curToken = Token("]", TokenType.RightSquareBracket)
-                    index = if(forwards) index + 1 else index -1
-                }
                 curChar == '+' -> {
                     curToken = Token("+", TokenType.Add)
                     index = if(forwards) index + 1 else index -1

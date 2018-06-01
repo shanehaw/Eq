@@ -16,19 +16,7 @@ class Enricher(private val scanner: Scanner) {
             while(i < chs.size) {
                 val curChar = chs[i]
                 if(curChar == '/' || curChar == '*') {
-                    index = i - 1
-                    getNextToken(false)
-                    subClause(false)
-                    getNextToken(true)
-                    getNextToken(true)
-                    chs.add(maxOf(index, 0), '(')
-                    index = i + 2
-                    getNextToken(true)
-                    subClause(true)
-                    getNextToken(false)
-                    getNextToken(false)
-                    chs.add(minOf(index+1, chs.size), ')')
-                    index = 0
+                    insertLogicalBracketsAroundOperatorAtIndex(i)
                     i++
                 }
                 i++
@@ -38,19 +26,7 @@ class Enricher(private val scanner: Scanner) {
             while(i < chs.size) {
                 val curChar = chs[i]
                 if(curChar == '+' || curChar == '-') {
-                    index = i - 1
-                    getNextToken(false)
-                    subClause(false)
-                    getNextToken(true)
-                    getNextToken(true)
-                    chs.add(maxOf(index, 0), '(')
-                    index = i + 2
-                    getNextToken(true)
-                    subClause(true)
-                    getNextToken(false)
-                    getNextToken(false)
-                    chs.add(minOf(index+1, chs.size), ')')
-                    index = 0
+                    insertLogicalBracketsAroundOperatorAtIndex(i)
                     i++
                 }
                 i++
@@ -61,22 +37,37 @@ class Enricher(private val scanner: Scanner) {
         return text
     }
 
-    private fun subClause(forwards: Boolean)  {
+    private fun insertLogicalBracketsAroundOperatorAtIndex(i: Int) {
+        //start parsing from the character left of the current operator
+        index = i - 1
+        //find correct index to place left bracket
+        getNextToken(ParseDirection.Backwards)
+        subClause(ParseDirection.Backwards)
+        getNextToken(ParseDirection.Forwards)
+        getNextToken(ParseDirection.Forwards)
+        //consider boundaries of list
+        chs.add(maxOf(index, 0), '(')
+        //account for new left bracket and move one character to right of current operator
+        index = i + 2
+        //find correct index to place right bracket
+        getNextToken(ParseDirection.Forwards)
+        subClause(ParseDirection.Forwards)
+        getNextToken(ParseDirection.Backwards)
+        getNextToken(ParseDirection.Backwards)
+        //consider boundaries of list
+        chs.add(minOf(index + 1, chs.size), ')')
+    }
+
+    private fun subClause(direction: ParseDirection)  {
         if (curToken.type == TokenType.Integer) {
-            getNextToken(forwards)
-        } else if ((forwards && curToken.type == TokenType.LeftBracket) || (!forwards && curToken.type == TokenType.RightBracket)) {
-            getNextToken(forwards)
-            parseClause(forwards)
-            if ((forwards && curToken.type == TokenType.RightBracket) || (!forwards && curToken.type == TokenType.LeftBracket)) {
-                getNextToken(forwards)
-            } else {
-                throw IllegalArgumentException()
-            }
-        } else if ((forwards && curToken.type == TokenType.LeftSquareBracket) || (!forwards && curToken.type == TokenType.RightSquareBracket)) {
-            getNextToken(forwards)
-            parseClause(forwards)
-            if ((forwards && curToken.type == TokenType.RightSquareBracket) || (!forwards && curToken.type == TokenType.LeftSquareBracket)) {
-                getNextToken(forwards)
+            getNextToken(direction)
+        } else if ((direction == ParseDirection.Forwards && curToken.type == TokenType.LeftBracket)
+                || (direction == ParseDirection.Backwards && curToken.type == TokenType.RightBracket)) {
+            getNextToken(direction)
+            parseClause(direction)
+            if ((direction == ParseDirection.Forwards && curToken.type == TokenType.RightBracket)
+                    || (direction == ParseDirection.Backwards && curToken.type == TokenType.LeftBracket)) {
+                getNextToken(direction)
             } else {
                 throw IllegalArgumentException()
             }
@@ -86,10 +77,10 @@ class Enricher(private val scanner: Scanner) {
         }
     }
 
-    private fun getNextToken(forwards: Boolean) {
+    private fun getNextToken(direction: ParseDirection) {
         val text = chs.joinToString("")
         val nextContext : ScanContext =
-            if(forwards) {
+            if(direction == ParseDirection.Forwards) {
                 scanner.getNextToken(text, index)
             } else {
                 scanner.getPrevToken(text, index)
@@ -99,14 +90,14 @@ class Enricher(private val scanner: Scanner) {
 
     }
 
-    private fun parseClause(forwards: Boolean) {
-        subClause(forwards)
+    private fun parseClause(direction: ParseDirection) {
+        subClause(direction)
         while (curToken.type == TokenType.Add
                 || curToken.type == TokenType.Subtraction
                 || curToken.type == TokenType.Multiply
                 || curToken.type == TokenType.Division) {
-            getNextToken(forwards)
-            parseClause(forwards)
+            getNextToken(direction)
+            parseClause(direction)
         }
     }
 }
