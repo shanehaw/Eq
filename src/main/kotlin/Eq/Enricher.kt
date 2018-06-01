@@ -7,40 +7,49 @@ class Enricher(private val scanner: Scanner) {
 
     fun enrich(text: String) : String {
         if(text.isNotEmpty() && (text.first().isDigit() || '(' == text.first())) {
-            chs.clear()
-            val charCollection : MutableCollection<Char> = mutableListOf()
-            text.toCollection(charCollection)
-            chs.addAll(0, charCollection)
-
-            var i = 0
-            while(i < chs.size) {
-                val curChar = chs[i]
-                if(curChar == '/' || curChar == '*') {
-                    insertLogicalBracketsAroundOperatorAtIndex(i)
-                    i++
-                }
-                i++
-            }
-
-            i = 0
-            while(i < chs.size) {
-                val curChar = chs[i]
-                if(curChar == '+' || curChar == '-') {
-                    insertLogicalBracketsAroundOperatorAtIndex(i)
-                    i++
-                }
-                i++
-            }
-
+            setupCharListForParsing(text)
+            addLogicalPrecedenceForDivAndMul()
+            addLogicalPrecedenceForAddAndSub()
             return chs.joinToString("")
         }
         return text
     }
 
+    private fun setupCharListForParsing(text: String) {
+        chs.clear()
+        val charCollection: MutableCollection<Char> = mutableListOf()
+        text.toCollection(charCollection)
+        chs.addAll(0, charCollection)
+    }
+
+    private fun addLogicalPrecedenceForDivAndMul() {
+        var i = 0
+        while (i < chs.size) {
+            val curChar = chs[i]
+            if (curChar == '/' || curChar == '*') {
+                insertLogicalBracketsAroundOperatorAtIndex(i)
+                i++
+            }
+            i++
+        }
+    }
+
+    private fun addLogicalPrecedenceForAddAndSub() {
+        var i = 0
+        while(i < chs.size) {
+            val curChar = chs[i]
+            if(curChar == '+' || curChar == '-') {
+                insertLogicalBracketsAroundOperatorAtIndex(i)
+                i++
+            }
+            i++
+        }
+    }
+
     private fun insertLogicalBracketsAroundOperatorAtIndex(i: Int) {
         //start parsing from the character left of the current operator
         index = i - 1
-        //find correct index to place left bracket
+        //find correct index to place left bracket - these operations change index
         getNextToken(ParseDirection.Backwards)
         subClause(ParseDirection.Backwards)
         getNextToken(ParseDirection.Forwards)

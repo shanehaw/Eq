@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48a1815c-0bce-4a1f-8a88-dc02ecd58951" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Eq/ParseDirection.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Eq/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Eq/Parser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Eq/TokenType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Eq/TokenType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Eq/Enricher.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Eq/Enricher.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Eq/Parser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Eq/Parser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Eq/Scanner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Eq/Scanner.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Eq/TokenType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Eq/TokenType.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/EqTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/EqTests.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -48,11 +42,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EqTests.kt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EqTests.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/kotlin/tests/EqTests.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="50" selection-end-column="44" />
+            <state relative-caret-position="374">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
               <folding>
                 <element signature="e#15#263#0" expanded="true" />
               </folding>
@@ -117,11 +111,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Enricher.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Enricher.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/Eq/Enricher.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="68" column="20" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
+            <state relative-caret-position="-408">
+              <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -525,12 +519,12 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/Eq/ScanContext.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Eq/Eq.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/tests/EnricherTests.kt" />
-        <option value="$PROJECT_DIR$/src/test/kotlin/tests/EqTests.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Eq/Parser.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Eq/TokenType.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Eq/Scanner.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Eq/ParseDirection.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Eq/Enricher.kt" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/tests/EqTests.kt" />
       </list>
     </option>
   </component>
@@ -653,7 +647,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in Eq_test (3)">
+  <component name="RunManager" selected="JUnit.All in Eq_test (1)">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -674,7 +668,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="All in Eq_test (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in Eq_test (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Eq_test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -691,7 +685,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="All in Eq_test (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in Eq_test (4)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Eq_test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -781,19 +775,19 @@
       <listeners />
     </configuration>
     <list>
+      <item itemvalue="JUnit.All in Eq_test (3)" />
+      <item itemvalue="JUnit.All in Eq_test (4)" />
       <item itemvalue="JUnit.All in Eq_test (5)" />
       <item itemvalue="JUnit.All in Eq_test" />
       <item itemvalue="JUnit.All in Eq_test (1)" />
-      <item itemvalue="JUnit.All in Eq_test (2)" />
-      <item itemvalue="JUnit.All in Eq_test (3)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in Eq_test (3)" />
-        <item itemvalue="JUnit.All in Eq_test (2)" />
         <item itemvalue="JUnit.All in Eq_test (1)" />
         <item itemvalue="JUnit.All in Eq_test" />
         <item itemvalue="JUnit.All in Eq_test (5)" />
+        <item itemvalue="JUnit.All in Eq_test (4)" />
+        <item itemvalue="JUnit.All in Eq_test (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -822,26 +816,11 @@
       <workItem from="1527574559463" duration="1319000" />
       <workItem from="1527655604598" duration="2337000" />
       <workItem from="1527830110150" duration="7593000" />
-      <workItem from="1527838804472" duration="1530000" />
+      <workItem from="1527838804472" duration="2004000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="EnricherTests_simple_enrichment - 2018.06.01 at 09h 35m 10s.xml">
-      <configuration name="EnricherTests.simple enrichment" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EnricherTests_multi-clause-same-operation_enrichment - 2018.06.01 at 09h 35m 13s.xml">
-      <configuration name="EnricherTests.multi-clause-same-operation enrichment" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_Eq_test - 2018.06.01 at 09h 35m 31s.xml">
-      <configuration name="All in Eq_test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_Eq_test_(1) - 2018.06.01 at 09h 40m 37s.xml">
-      <configuration name="All in Eq_test (1)" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_Eq_test_(3) - 2018.06.01 at 09h 41m 15s.xml">
-      <configuration name="All in Eq_test (3)" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_Eq_test_(4) - 2018.06.01 at 09h 41m 47s.xml">
       <configuration name="All in Eq_test (4)" configurationId="JUnit" />
     </history-entry>
@@ -857,9 +836,24 @@
     <history-entry file="All_in_Eq_test_(2) - 2018.06.01 at 10h 04m 04s.xml">
       <configuration name="All in Eq_test (2)" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_in_Eq_test_(3) - 2018.06.01 at 10h 06m 00s.xml">
+      <configuration name="All in Eq_test (3)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_Eq_test_(4) - 2018.06.01 at 10h 09m 46s.xml">
+      <configuration name="All in Eq_test (4)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_Eq_test_(5) - 2018.06.01 at 10h 10m 56s.xml">
+      <configuration name="All in Eq_test (5)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_Eq_test - 2018.06.01 at 10h 12m 19s.xml">
+      <configuration name="All in Eq_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_Eq_test_(1) - 2018.06.01 at 10h 12m 29s.xml">
+      <configuration name="All in Eq_test (1)" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70861000" />
+    <option name="totallyTimeSpent" value="71335000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="6301" y="45" width="1009" height="1176" extended-state="0" />
@@ -882,11 +876,11 @@
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4955847" visible="true" weight="0.3263158" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4955847" weight="0.3263158" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3291866" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49935484" weight="0.2714412" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4993395" visible="true" weight="0.30114228" />
-      <window_info anchor="bottom" id="sbt-shell-toolwindow" order="7" weight="0.3288854" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4993395" visible="true" weight="0.30114228" />
+      <window_info anchor="bottom" id="sbt-shell-toolwindow" order="7" weight="0.32822967" />
       <window_info id="Learn" order="2" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.36238807" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -902,6 +896,32 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -1214,23 +1234,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/tests/EnricherTests.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/tests/EqTests.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="50" selection-end-column="44" />
-          <folding>
-            <element signature="e#15#263#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Eq/Parser.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1165">
@@ -1261,8 +1264,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Eq/Enricher.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="68" column="20" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
+        <state relative-caret-position="-408">
+          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/tests/EnricherTests.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/tests/EqTests.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="e#15#263#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -47,6 +47,7 @@ class EqTests {
         val result = eq.eval(text)
         assertThat(result, `is`(expected))
 
+//TODO: Need to think about printing back to ensure the correct parsing. Or do we?
 //        val resultText = eq.evalAndPrintBack(text)
 //        assertThat(resultText, `is`(text))
     }
