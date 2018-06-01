@@ -1,13 +1,12 @@
 package Eq
 
-class Enricher(val scanner: Scanner) {
+class Enricher(private val scanner: Scanner) {
     private var index = 0
     private var curToken = Token("", TokenType.Empty)
     private val chs : MutableList<Char> = mutableListOf()
 
     fun enrich(text: String) : String {
-        if(text.isNotEmpty() && text.first().isDigit()) {
-            index = 0
+        if(text.isNotEmpty() && (text.first().isDigit() || '(' == text.first())) {
             chs.clear()
             val charCollection : MutableCollection<Char> = mutableListOf()
             text.toCollection(charCollection)
@@ -21,19 +20,43 @@ class Enricher(val scanner: Scanner) {
                     getNextToken(false)
                     subClause(false)
                     getNextToken(true)
-                    chs.add(index+1, '(')
+                    getNextToken(true)
+                    chs.add(maxOf(index, 0), '(')
                     index = i + 2
                     getNextToken(true)
                     subClause(true)
                     getNextToken(false)
-                    chs.add(index, ')')
+                    getNextToken(false)
+                    chs.add(minOf(index+1, chs.size), ')')
                     index = 0
                     i++
                 }
                 i++
             }
 
-            return "(${chs.joinToString("")})"
+            i = 0
+            while(i < chs.size) {
+                val curChar = chs[i]
+                if(curChar == '+' || curChar == '-') {
+                    index = i - 1
+                    getNextToken(false)
+                    subClause(false)
+                    getNextToken(true)
+                    getNextToken(true)
+                    chs.add(maxOf(index, 0), '(')
+                    index = i + 2
+                    getNextToken(true)
+                    subClause(true)
+                    getNextToken(false)
+                    getNextToken(false)
+                    chs.add(minOf(index+1, chs.size), ')')
+                    index = 0
+                    i++
+                }
+                i++
+            }
+
+            return chs.joinToString("")
         }
         return text
     }
@@ -42,7 +65,6 @@ class Enricher(val scanner: Scanner) {
         if (curToken.type == TokenType.Integer) {
             getNextToken(forwards)
         } else if ((forwards && curToken.type == TokenType.LeftBracket) || (!forwards && curToken.type == TokenType.RightBracket)) {
-
             getNextToken(forwards)
             parseClause(forwards)
             if ((forwards && curToken.type == TokenType.RightBracket) || (!forwards && curToken.type == TokenType.LeftBracket)) {
@@ -50,7 +72,16 @@ class Enricher(val scanner: Scanner) {
             } else {
                 throw IllegalArgumentException()
             }
-        } else {        
+        } else if ((forwards && curToken.type == TokenType.LeftSquareBracket) || (!forwards && curToken.type == TokenType.RightSquareBracket)) {
+            getNextToken(forwards)
+            parseClause(forwards)
+            if ((forwards && curToken.type == TokenType.RightSquareBracket) || (!forwards && curToken.type == TokenType.LeftSquareBracket)) {
+                getNextToken(forwards)
+            } else {
+                throw IllegalArgumentException()
+            }
+        }
+        else {
             throw IllegalArgumentException()
         }
     }

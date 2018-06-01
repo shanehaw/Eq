@@ -24,7 +24,8 @@ class Eq(val parser: Parser, val enricher: Enricher) {
             throw IllegalArgumentException()
         }
 
-        val statement = parser.parse(text)
+        val enrichedText = enricher.enrich(text)
+        val statement = parser.parse(enrichedText)
         if (statement is EmptyClause)
             throw IllegalArgumentException()
         else {

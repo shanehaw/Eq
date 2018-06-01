@@ -32,8 +32,18 @@ class EnricherTests {
         val enricher = Enricher(Scanner())
         var result = ""
 
-        result = enricher.enrich("1 + 1")
-        assertThat(result, `is`("(1 + 1)"))
+        result = enricher.enrich("7 + 7 / 7 + 7 * 7 - 7")
+        assertThat(result, `is`("(((7 + (7 / 7)) + (7 * 7)) - 7)"))
+
+        result = enricher.enrich("7+7/7+7*7-7")
+        assertThat(result, `is`("(((7+(7/7))+(7*7))-7)"))
+
+
+        result = enricher.enrich("(1/1)/(1/1)")
+        assertThat(result, `is`("(((1/1))/((1/1)))"))
+
+        result = enricher.enrich("(1 / 1) / (1 / 1)")
+        assertThat(result, `is`("(((1 / 1)) / ((1 / 1)))"))
     }
 
     @Test
@@ -45,16 +55,13 @@ class EnricherTests {
         assertThat(result, `is`("(1 + (1 / 1))"))
 
         result = enricher.enrich("1 + 1 / 1 - 1 / 1 + 1")
-        assertThat(result, `is`("(1 + (1 / 1) - (1 / 1) + 1)"))
+        assertThat(result, `is`("(((1 + (1 / 1)) - (1 / 1)) + 1)"))
 
 
         result = enricher.enrich("10 - (1 + 1) / (1 + 1) + 7")
-        assertThat(result, `is`("(10 - ((1 + 1) / (1 + 1)) + 7)"))
+        assertThat(result, `is`("((10 - (((1 + 1)) / ((1 + 1)))) + 7)"))
 
         result = enricher.enrich("10 - (1 + 1 / 1 + 7) / 8 + 7")
-        assertThat(result, `is`("(10 - ((1 + (1 / 1) + 7) / 8) + 7)"))
-
-        result = enricher.enrich("7 + 7 / 7 + 7 * 7 - 7")
-        assertThat(result, `is`("(7 + (7 / 7) + (7 * 7) - 7)"))
+        assertThat(result, `is`("((10 - ((((1 + (1 / 1)) + 7)) / 8)) + 7)"))
     }
 }

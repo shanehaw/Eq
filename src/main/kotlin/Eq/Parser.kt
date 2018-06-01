@@ -46,7 +46,7 @@ class Parser(val scanner: Scanner) {
 
             if (curClause.hasRHS()) {
                 curClause.setRHS(clause)
-                clause = LogicalHiddenBracketClause(curClause)
+                clause = curClause
             }
 
             getNextToken()
@@ -62,6 +62,23 @@ class Parser(val scanner: Scanner) {
                 throw IllegalArgumentException()
             }
             clause = BracketClause(middleClause)
+
+            if (curClause.hasRHS()) {
+                curClause.setRHS(clause)
+                clause = curClause
+            }
+            return clause
+        } else if (curToken.type == TokenType.LeftSquareBracket) {
+            var clause: Clause
+
+            getNextToken()
+            val middleClause = parseClause(EmptyClause())
+            if (curToken.type == TokenType.RightSquareBracket) {
+                getNextToken()
+            } else {
+                throw IllegalArgumentException()
+            }
+            clause = LogicalHiddenBracketClause(middleClause)
 
             if (curClause.hasRHS()) {
                 curClause.setRHS(clause)

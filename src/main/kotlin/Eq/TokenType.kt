@@ -8,5 +8,7 @@ enum class TokenType {
     Division,
     LeftBracket,
     RightBracket,
+    LeftSquareBracket,
+    RightSquareBracket,
     Empty
 }

@@ -32,6 +32,14 @@ class Scanner {
                     curToken = Token(")", TokenType.RightBracket)
                     index = if(forwards) index + 1 else index -1
                 }
+                curChar == '[' -> {
+                    curToken = Token("[", TokenType.LeftSquareBracket)
+                    index = if(forwards) index + 1 else index -1
+                }
+                curChar == ']' -> {
+                    curToken = Token("]", TokenType.RightSquareBracket)
+                    index = if(forwards) index + 1 else index -1
+                }
                 curChar == '+' -> {
                     curToken = Token("+", TokenType.Add)
                     index = if(forwards) index + 1 else index -1
@@ -50,26 +58,34 @@ class Scanner {
                 }
                 Character.isDigit(curChar) -> curToken = if(forwards) getNextIntegerToken() else getPrevIntegerToken()
             }
+
+            if(forwards) getFirstCharAfterWhitespace() else getFirstCharBeforeWhitespace()
         }
         return curToken
     }
 
     private fun getFirstCharAfterWhitespace(): Char {
-        var curChar = textChars[index]
-        while (curChar == ' ') {
-            index++
-            curChar = textChars[index]
+        if(index < textChars.size) {
+            var curChar = textChars[index]
+            while (curChar == ' ') {
+                index++
+                curChar = textChars[index]
+            }
+            return curChar
         }
-        return curChar
+        return 0.toChar()
     }
 
     private fun getFirstCharBeforeWhitespace(): Char {
-        var curChar = textChars[index]
-        while (curChar == ' ') {
-            index--
-            curChar = textChars[index]
+        if(index >= 0) {
+            var curChar = textChars[index]
+            while (curChar == ' ') {
+                index--
+                curChar = textChars[index]
+            }
+            return curChar
         }
-        return curChar
+        return 0.toChar()
     }
 
     private fun getNextIntegerToken(): Token {
