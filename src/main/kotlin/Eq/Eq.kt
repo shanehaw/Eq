@@ -18,18 +18,4 @@ class Eq(val parser: Parser, val enricher: Enricher) {
             return statement.eval()
         }
     }
-
-    fun evalAndPrintBack(text: String?): String {
-        if (text == null || text.isEmpty()) {
-            throw IllegalArgumentException()
-        }
-
-        val enrichedText = enricher.enrich(text)
-        val statement = parser.parse(enrichedText)
-        if (statement is EmptyClause)
-            throw IllegalArgumentException()
-        else {
-            return statement.print()
-        }
-    }
 }

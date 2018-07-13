@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48a1815c-0bce-4a1f-8a88-dc02ecd58951" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Eq/Enricher.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Eq/Enricher.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Eq/Eq.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Eq/Eq.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/tests/EqTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/tests/EqTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Eq/Eq.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Eq/Eq.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/EqTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/EqTests.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -42,11 +45,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EqTests.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EqTests.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/kotlin/tests/EqTests.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="466">
+              <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
               <folding>
                 <element signature="e#15#263#0" expanded="true" />
               </folding>
@@ -54,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Eq.kt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Eq.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/Eq/Eq.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+            <state relative-caret-position="340">
+              <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -66,8 +69,8 @@
       <file leaf-file-name="Parser.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/Eq/Parser.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1165">
-              <caret line="72" column="5" lean-forward="true" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+            <state>
+              <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -75,7 +78,7 @@
       <file leaf-file-name="EnricherTests.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/kotlin/tests/EnricherTests.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
+            <state>
               <caret line="52" selection-start-line="52" selection-end-line="52" />
             </state>
           </provider>
@@ -84,7 +87,7 @@
       <file leaf-file-name="Scanner.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/Eq/Scanner.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
+            <state>
               <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
             </state>
           </provider>
@@ -93,7 +96,7 @@
       <file leaf-file-name="TokenType.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/Eq/TokenType.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state>
               <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
             </state>
           </provider>
@@ -102,7 +105,7 @@
       <file leaf-file-name="Token.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/Eq/Token.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state>
               <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
               <folding>
                 <element signature="e#12#201#0" expanded="true" />
@@ -114,7 +117,7 @@
       <file leaf-file-name="Enricher.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/Eq/Enricher.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-408">
+            <state>
               <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
             </state>
           </provider>
@@ -123,7 +126,7 @@
       <file leaf-file-name="ParseDirection.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/Eq/ParseDirection.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
+            <state>
               <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
             </state>
           </provider>
@@ -132,7 +135,7 @@
       <file leaf-file-name="LogicalHiddenBracketClause.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/Eq/Clauses/LogicalHiddenBracketClause.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state>
               <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
             </state>
           </provider>
@@ -517,7 +520,6 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/Eq/Clauses/SubtractionClause.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Eq/Clauses/LogicalHiddenBracketClause.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Eq/ScanContext.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/Eq/Eq.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/tests/EnricherTests.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Eq/Parser.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Eq/TokenType.kt" />
@@ -525,6 +527,7 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/Eq/ParseDirection.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Eq/Enricher.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/tests/EqTests.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Eq/Eq.kt" />
       </list>
     </option>
   </component>
@@ -535,9 +538,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="6301" />
-    <option name="y" value="45" />
-    <option name="width" value="1009" />
+    <option name="x" value="2897" />
+    <option name="y" value="637" />
+    <option name="width" value="1819" />
     <option name="height" value="1176" />
   </component>
   <component name="ProjectView">
@@ -545,7 +548,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -614,7 +617,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -625,7 +628,7 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="zielu.svntoolbox.prj.config" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
@@ -647,7 +650,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in Eq_test (1)">
+  <component name="RunManager" selected="JUnit.All in Eq_test (2)">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -668,7 +671,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="All in Eq_test (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in Eq_test (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Eq_test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -775,19 +778,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="JUnit.All in Eq_test (3)" />
       <item itemvalue="JUnit.All in Eq_test (4)" />
       <item itemvalue="JUnit.All in Eq_test (5)" />
       <item itemvalue="JUnit.All in Eq_test" />
       <item itemvalue="JUnit.All in Eq_test (1)" />
+      <item itemvalue="JUnit.All in Eq_test (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in Eq_test (2)" />
         <item itemvalue="JUnit.All in Eq_test (1)" />
         <item itemvalue="JUnit.All in Eq_test" />
         <item itemvalue="JUnit.All in Eq_test (5)" />
         <item itemvalue="JUnit.All in Eq_test (4)" />
-        <item itemvalue="JUnit.All in Eq_test (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -817,13 +820,19 @@
       <workItem from="1527655604598" duration="2337000" />
       <workItem from="1527830110150" duration="7593000" />
       <workItem from="1527838804472" duration="2004000" />
+      <workItem from="1531483980088" duration="790000" />
     </task>
+    <task id="LOCAL-00001" summary="remove print back code">
+      <created>1531484139417</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1531484139417</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_Eq_test_(4) - 2018.06.01 at 09h 41m 47s.xml">
-      <configuration name="All in Eq_test (4)" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_Eq_test_(5) - 2018.06.01 at 09h 44m 19s.xml">
       <configuration name="All in Eq_test (5)" configurationId="JUnit" />
     </history-entry>
@@ -851,13 +860,15 @@
     <history-entry file="All_in_Eq_test_(1) - 2018.06.01 at 10h 12m 29s.xml">
       <configuration name="All in Eq_test (1)" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_in_Eq_test_(2) - 2018.07.13 at 14h 14m 13s.xml">
+      <configuration name="All in Eq_test (2)" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71335000" />
+    <option name="totallyTimeSpent" value="72125000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="6301" y="45" width="1009" height="1176" extended-state="0" />
-    <editor active="true" />
+    <frame x="2897" y="637" width="1819" height="1176" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="sbt" order="3" />
@@ -878,8 +889,8 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4955847" weight="0.3263158" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3291866" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49935484" weight="0.2714412" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4993395" visible="true" weight="0.30114228" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49935484" visible="true" weight="0.2708134" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4993395" visible="true" weight="0.16694868" />
       <window_info anchor="bottom" id="sbt-shell-toolwindow" order="7" weight="0.32822967" />
       <window_info id="Learn" order="2" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.36238807" />
@@ -925,6 +936,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="remove print back code" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove print back code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1212,21 +1227,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Eq/Clauses/LogicalHiddenBracketClause.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state>
           <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Eq/Eq.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Eq/Token.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state>
           <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
           <folding>
             <element signature="e#12#201#0" expanded="true" />
@@ -1236,53 +1244,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Eq/Parser.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1165">
-          <caret line="72" column="5" lean-forward="true" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+        <state>
+          <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Eq/TokenType.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state>
           <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Eq/Scanner.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
+        <state>
           <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Eq/ParseDirection.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
+        <state>
           <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Eq/Enricher.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408">
+        <state>
           <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/tests/EnricherTests.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
+        <state>
           <caret line="52" selection-start-line="52" selection-end-line="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/tests/EqTests.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="466">
+          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
           <folding>
             <element signature="e#15#263#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Eq/Eq.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
         </state>
       </provider>
     </entry>
