@@ -1,4 +1,4 @@
-package Eq.Clauses
+package EquationCore.Clauses
 
 open class BracketClause(open val inner : Clause) : Clause() {
 

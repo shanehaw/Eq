@@ -1,4 +1,4 @@
-package Eq.Clauses
+package EquationCore.Clauses
 
 enum class Operation {
     Add,

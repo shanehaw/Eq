@@ -1,4 +1,4 @@
-package Eq.Clauses
+package EquationCore.Clauses
 
 class EmptyClause() : Clause() {
     override fun print(): String {

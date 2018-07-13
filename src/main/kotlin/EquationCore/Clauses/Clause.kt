@@ -1,4 +1,4 @@
-package Eq.Clauses
+package EquationCore.Clauses
 
 abstract class Clause() {
 

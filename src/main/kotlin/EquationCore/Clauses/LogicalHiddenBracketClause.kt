@@ -1,6 +1,4 @@
-package Eq.Clauses
-
-import Eq.Clauses.BracketClause
+package EquationCore.Clauses
 
 class LogicalHiddenBracketClause(override val inner : Clause) : BracketClause(inner) {
 

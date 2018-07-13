@@ -1,4 +1,4 @@
-package Eq
+package EquationCore
 
 class Enricher(private val scanner: Scanner) {
     private var index = 0

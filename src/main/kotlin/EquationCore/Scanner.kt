@@ -1,4 +1,4 @@
-package Eq
+package EquationCore
 
 class Scanner {
 

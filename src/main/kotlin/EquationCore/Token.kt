@@ -1,11 +1,11 @@
-package Eq
+package EquationCore
 
-import Eq.Clauses.Clause
-import Eq.Clauses.AdditionClause
-import Eq.Clauses.SubtractionClause
-import Eq.Clauses.EmptyClause
-import Eq.Clauses.MultiplyClause
-import Eq.Clauses.DivisionClause
+import EquationCore.Clauses.Clause
+import EquationCore.Clauses.AdditionClause
+import EquationCore.Clauses.SubtractionClause
+import EquationCore.Clauses.EmptyClause
+import EquationCore.Clauses.MultiplyClause
+import EquationCore.Clauses.DivisionClause
 
 data class Token(val token : String, val type: TokenType) {
 

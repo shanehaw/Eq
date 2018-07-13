@@ -1,4 +1,4 @@
-package Eq.Clauses
+package EquationCore.Clauses
 
 class IntLiteralClause(val num: Int) : Clause() {
     override fun print(): String {

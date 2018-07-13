@@ -1,4 +1,4 @@
-package Eq.Clauses
+package EquationCore.Clauses
 
 class MultiplyClause(var lhs: Clause): Clause() {
 

@@ -1,7 +1,10 @@
-package Eq.Clauses
+package EquationCore.Clauses
 
-class DivisionClause(var lhs : Clause): Clause() {
+class AdditionClause(var lhs : Clause) : Clause() {
 
+    override fun print(): String {
+        return lhs.print() + " + " + rhs.print()
+    }
 
     var rhs : Clause = EmptyClause()
 
@@ -14,14 +17,10 @@ class DivisionClause(var lhs : Clause): Clause() {
     override fun prepare(op: Operation) {
         lhs.prepare(op)
         rhs.prepare(op)
-        if(op == Operation.Division) {
+        if(op == Operation.Add) {
             lhs.prepareBODMAS()
             rhs.prepareBODMAS()
-            value = lhs.eval() / rhs.eval()
+            value = lhs.eval() + rhs.eval()
         }
-    }
-
-    override fun print(): String {
-        return lhs.print() + " / " + rhs.print()
     }
 }

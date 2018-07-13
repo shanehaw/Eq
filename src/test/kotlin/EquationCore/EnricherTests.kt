@@ -1,10 +1,7 @@
-package tests
+package EquationCore
 
-import Eq.Enricher
-import Eq.Scanner
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
-import org.junit.Ignore
 import org.junit.Test
 
 class EnricherTests {

@@ -1,6 +1,6 @@
-package Eq
+package EquationCore
 
-import Eq.Clauses.*
+import EquationCore.Clauses.*
 
 class Parser(val scanner: Scanner) {
 

@@ -1,7 +1,7 @@
-package Eq
+package EquationCore
 
 
-import Eq.Clauses.*
+import EquationCore.Clauses.*
 
 class Eq(val parser: Parser, val enricher: Enricher) {
     fun eval(text: String?): Int {

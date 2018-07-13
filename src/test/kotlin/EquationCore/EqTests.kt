@@ -1,4 +1,4 @@
-package Eq
+package EquationCore
 
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
