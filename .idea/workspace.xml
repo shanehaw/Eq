@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48a1815c-0bce-4a1f-8a88-dc02ecd58951" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/EquationMaker/EqMaker.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/EquationMaker/EqMakerTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/EquationMaker/EqMakerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/EquationMaker/EqMakerTest.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -66,10 +65,10 @@
       <file leaf-file-name="EqMakerTest.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/kotlin/EquationMaker/EqMakerTest.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+            <state relative-caret-position="544">
+              <caret line="32" column="57" lean-forward="true" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
               <folding>
-                <element signature="e#23#103#0" expanded="true" />
+                <element signature="e#23#235#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -795,7 +794,7 @@
       <workItem from="1527655604598" duration="2337000" />
       <workItem from="1527830110150" duration="7593000" />
       <workItem from="1527838804472" duration="2004000" />
-      <workItem from="1531483980088" duration="2146000" />
+      <workItem from="1531483980088" duration="2601000" />
     </task>
     <task id="LOCAL-00001" summary="remove print back code">
       <created>1531484139417</created>
@@ -808,9 +807,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_Eq_test_(2) - 2018.06.01 at 10h 04m 04s.xml">
-      <configuration name="All in Eq_test (2)" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_Eq_test_(3) - 2018.06.01 at 10h 06m 00s.xml">
       <configuration name="All in Eq_test (3)" configurationId="JUnit" />
     </history-entry>
@@ -838,9 +834,12 @@
     <history-entry file="All_in_Eq_test_(4) - 2018.07.13 at 14h 36m 57s.xml">
       <configuration name="All in Eq_test (4)" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="EqMakerTest_can_create_basic_equation - 2018.07.13 at 14h 48m 49s.xml">
+      <configuration name="EqMakerTest.can create basic equation" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73481000" />
+    <option name="totallyTimeSpent" value="73936000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2897" y="637" width="1819" height="1176" extended-state="0" />
@@ -863,10 +862,10 @@
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4955847" visible="true" weight="0.3263158" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4955847" weight="0.3263158" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3291866" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49935484" weight="0.2708134" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4993395" visible="true" weight="0.16694868" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49935484" visible="true" weight="0.2708134" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4993395" visible="true" weight="0.16694868" />
       <window_info anchor="bottom" id="sbt-shell-toolwindow" order="7" weight="0.32822967" />
       <window_info id="Learn" order="2" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.36238807" />
@@ -1272,10 +1271,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/EquationMaker/EqMakerTest.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+        <state relative-caret-position="544">
+          <caret line="32" column="57" lean-forward="true" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
           <folding>
-            <element signature="e#23#103#0" expanded="true" />
+            <element signature="e#23#235#0" expanded="true" />
           </folding>
         </state>
       </provider>
