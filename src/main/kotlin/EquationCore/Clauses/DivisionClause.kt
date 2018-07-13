@@ -17,7 +17,14 @@ class DivisionClause(var lhs : Clause): Clause() {
         if(op == Operation.Division) {
             lhs.prepareBODMAS()
             rhs.prepareBODMAS()
-            value = lhs.eval() / rhs.eval()
+            val lhsValue = lhs.eval()
+            val rhsValue = rhs.eval()
+
+            if(lhsValue % rhsValue > 0) {
+                throw IllegalArgumentException("Division would result in truncation.")
+            }
+
+            value = lhsValue / rhsValue
         }
     }
 

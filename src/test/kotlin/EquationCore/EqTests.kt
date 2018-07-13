@@ -104,4 +104,9 @@ class EqTests {
         testEq("((25 / 5 * 2) / 2) * 30 - 5 + 5", 150)
         testEq("7 + 7 / 7 + 7 * 7 - 7", 50)
     }
+
+    @Test
+    fun `divides which result in decimals fail`() {
+        testFailure("5 / 3")
+    }
 }
